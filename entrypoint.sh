@@ -53,18 +53,7 @@ main() {
     useSnapshot
   fi
 
-  # build
-
-  if usesBoolean "${INPUT_NO_PUSH}"; then
-    if uses "${INPUT_USERNAME}" && uses "${INPUT_PASSWORD}"; then
-      docker logout
-    fi
-    exit 0
-  fi
-
-  if ! uses "${INPUT_PLATFORMS}"; then
-    push
-  fi
+  push
 
   echo "tag=${FIRST_TAG}" >> "$GITHUB_OUTPUT"
   if uses "${INPUT_PLATFORMS}"; then
