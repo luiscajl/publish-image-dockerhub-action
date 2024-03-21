@@ -53,7 +53,7 @@ main() {
     useSnapshot
   fi
 
-  build
+  # build
 
   if usesBoolean "${INPUT_NO_PUSH}"; then
     if uses "${INPUT_USERNAME}" && uses "${INPUT_PASSWORD}"; then
